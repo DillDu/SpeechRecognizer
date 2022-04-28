@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DroidSee SR Demo</string>
+    <string name="recognizing">Recognizing...</string>
+    //file browser
+    <string name="item_icon">List item icon</string>
+    <string name="up">../</string>
+    <string name="home">Home</string>
+    <string name="default_folder_key">default_folder</string>
+</resources>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/clRoot">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/custom_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/rlButtons"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/root_margin"
+        android:layout_marginEnd="@dimen/root_margin"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/ibtnOpenFile"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:textAllCaps="false"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ibtn_folder_open"
+            android:scaleType="fitCenter">
+
+        </ImageButton>
+
+        <Button
+            android:id="@+id/btnTapToSpeak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap to speak"
+            android:textAllCaps="false"
+            android:layout_toEndOf="@+id/ibtnOpenFile"
+            android:layout_toStartOf="@id/ibtnTranslate"
+            android:stateListAnimator="@null"/>
+
+        <ImageButton
+            android:id="@+id/ibtnTranslate"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ibtn_translate"
+            android:textAllCaps="false">
+
+        </ImageButton>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlLanguageButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/include"
+        app:layout_constraintBottom_toTopOf="@id/rlButtons"
+        android:gravity="center">
+
+        <Spinner
+            android:id="@+id/spinnerLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/ibtnSwap"
+            android:textAlignment="center"
+            android:background="@android:drawable/editbox_background"/>
+
+        <ImageButton
+            android:id="@+id/ibtnSwap"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ibtn_swap"
+            android:layout_centerInParent="true"/>
+        <Spinner
+            android:id="@+id/spinnerTranslate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/ibtnSwap"
+            android:textAlignment="center"
+            android:background="@android:drawable/editbox_background"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/svRecognized"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/root_margin"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/root_margin"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/rlLanguageButtonLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        android:background="@android:drawable/editbox_background">
+
+        <LinearLayout
+            android:id="@+id/recognizedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRecognizedText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textIsSelectable="true"/>
+
+            <com.droidsee.loadingviews.AVLoadingIndicatorView
+                android:id="@+id/avRecognizing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:indicatorColor="@android:color/black"
+                app:indicatorName="BallPulseIndicator"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/svTranslated"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/root_margin"
+        android:layout_marginEnd="@dimen/root_margin"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/rlButtons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rlLanguageButtonLayout"
+        android:background="@android:drawable/editbox_background">
+
+        <LinearLayout
+            android:id="@+id/translatedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTranslatedText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textIsSelectable="true" />
+
+            <com.droidsee.loadingviews.AVLoadingIndicatorView
+                android:id="@+id/avTranslating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:indicatorColor="@android:color/black"
+                app:indicatorName="BallPulseIndicator" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

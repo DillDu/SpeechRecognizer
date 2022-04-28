@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorMain">#36A6E2</color>
+    <color name="colorMainDark">#1E4B67</color>
+    <color name="gray_disabled">#979797</color>
+    <color name="gray_button">#d6d7d7</color>
+    <color name="blue_button_activate">#36A6E2</color>
+
+    //file browser
+    <color name="white">#F2F2F2</color>
+    <color name="text">#0C1111</color>
+</resources>

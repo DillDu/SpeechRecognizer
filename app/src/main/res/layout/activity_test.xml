@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:voiceView="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/custom_toolbar"></include>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="308dp"
+            android:layout_marginBottom="8dp"
+            android:text="Button"
+            voiceView:layout_constraintBottom_toBottomOf="parent"
+            voiceView:layout_constraintEnd_toEndOf="parent"
+            voiceView:layout_constraintStart_toStartOf="parent" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ToggleButton"
+            tools:layout_editor_absoluteX="119dp"
+            tools:layout_editor_absoluteY="675dp" />
+
+        <!--<com.droidsee.voiceline.VoiceLineView-->
+        <!--android:id="@+id/voicLine"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--voiceView:middleLine="@android:color/transparent"-->
+        <!--voiceView:middleLineHeight="0dp"-->
+        <!--voiceView:rectSpace="0dp"-->
+        <!--voiceView:rectWidth="2dp"-->
+        <!--voiceView:viewMode="line"-->
+        <!--voiceView:voiceLine="@android:color/white" />-->
+
+</android.support.constraint.ConstraintLayout>
